@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core"
+      xmlns:p="http://primefaces.org/ui">
+    <f:metadata>
+        <f:viewParam name="index" value="#{reportUpdateBean.index}"/>
+        <f:viewAction action="#{reportUpdateBean.load}"/>
+    </f:metadata>
+
+    <h:head>
+        <title>明細ページ</title>
+        <link rel="stylesheet" href="https://unpkg.com/primeflex@latest/primeflex.css" />
+    </h:head>
+    <h:body>
+        <h2>Update</h2>
+        <h:form>
+
+            <div class="ui-fluid">
+                <div class="field">
+                    <h:outputText for="title-input" value="Title" />
+                    <p:inputText id="title-input" value="#{reportUpdateBean.title}" />
+                    <h:message for="title-input" style="color: red" />
+                </div>
+                <div class="field">
+                    <h:outputText for="detail-input" value="Detail" />
+                    <p:inputTextarea id="detail-input" value="#{reportUpdateBean.detail}" rows="6" />
+                </div>
+            </div>
+            <div class="flex justify-content-end" style="gap: 0.5rem;">
+                <p:commandButton value="Update" ajax="false" action="#{reportUpdateBean.update()}" />
+                <p:link outcome="/reportList.xhtml" value="Back"/>
+            </div>
+        </h:form>
+
+        <div>
+            Title：<h:outputText value="#{reportUpdateBean.title}" />
+        </div>
+        <div>
+            Detail：<h:outputText value="#{reportUpdateBean.detail}" style="white-space: pre-wrap;"/>
+        </div>
+    </h:body>
+</html>
