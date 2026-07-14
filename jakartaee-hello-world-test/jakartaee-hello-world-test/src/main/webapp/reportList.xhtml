@@ -82,11 +82,11 @@
                                     <f:param name="index" value="#{rowIndex}"/>
                                 </p:link>
 
-                                <h:commandButton value="Delete" action="#{reportDeleteBean.delete}"
+                                <p:commandButton value="Delete" action="#{reportDeleteBean.delete}"
                                                  styleClass="p-button p-button-success p-button-raised"
                                                  onclick="return confirm('Delete this report?');">
                                     <f:setPropertyActionListener target="#{reportDeleteBean.index}" value="#{rowIndex}"/>
-                                </h:commandButton>
+                                </p:commandButton>
                             </div>
                         </p:column>
                     </p:dataTable>
