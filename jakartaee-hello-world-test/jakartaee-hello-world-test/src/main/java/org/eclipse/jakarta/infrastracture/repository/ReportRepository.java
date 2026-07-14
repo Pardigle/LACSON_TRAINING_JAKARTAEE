@@ -20,13 +20,13 @@ public class ReportRepository {
     }
     
     public void update(int index, ReportDto newReport) {
-    	if (index > 0 && index < reports.size()) {
+    	if (index >= 0 && index < reports.size()) {
     		reports.set(index, newReport);
     	}
     }
     
     public void delete(int index) {
-    	if (index > 0 && index < reports.size()) {
+    	if (index >= 0 && index < reports.size()) {
     		reports.remove(index);
     	}
     }
